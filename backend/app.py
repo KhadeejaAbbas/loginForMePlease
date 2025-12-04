@@ -8,6 +8,10 @@ CORS(app)  # This allows your frontend to send requests from any origin
 # Store attempts in memory (for demo)
 attempts = []
 
+@app.route('/')
+def home():
+    return "Flask backend is running!"
+
 @app.route('/api/attempts', methods=['POST'])
 def save_attempt():
     data = request.get_json()
